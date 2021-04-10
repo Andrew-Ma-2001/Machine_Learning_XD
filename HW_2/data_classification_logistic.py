@@ -105,13 +105,13 @@ if __name__ == '__main__':
     y = encoder.fit_transform(y)
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.3, random_state=101)
 
-    # 使用sklearn库函数计算
+    # 使用 sklearn 库函数计算
     model = LogisticRegression()
     model.fit(train_X, train_y)
     prediction = model.predict(test_X)
     print('The accuracy of the Logistic Regression is: {0}'.format(metrics.accuracy_score(prediction, test_y)))
 
-    # 使用bp的logistics计算(SGD)
+    # 使用 bp 的 logistics 计算(SGD)
     model = Logistic_regression(x_train=train_X, y_train=train_y, x_test=test_X, y_test=test_y)
     model.epochs = 50
     model.accTest()
