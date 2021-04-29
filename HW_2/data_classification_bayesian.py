@@ -11,9 +11,9 @@ url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 iris = pandas.read_csv(url, names=names)
 X = iris[['sepal-length', 'sepal-width', 'petal-length', 'petal-width']]
-X = X[0:100]
+
 y = iris['class']
-y = y[0:100]
+
 encoder = LabelEncoder()
 y = encoder.fit_transform(y)
 train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.3, random_state=101)

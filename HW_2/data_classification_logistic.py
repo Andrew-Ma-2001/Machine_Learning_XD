@@ -98,9 +98,9 @@ if __name__ == '__main__':
 
     # 数据预处理
     X = iris[['sepal-length', 'sepal-width', 'petal-length', 'petal-width']]
-    X = X[0:100]
+    # X = X[0:100]
     y = iris['class']
-    y = y[0:100]
+    # y = y[0:100]
     encoder = LabelEncoder()
     y = encoder.fit_transform(y)
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.3, random_state=101)
@@ -113,5 +113,5 @@ if __name__ == '__main__':
 
     # 使用 bp 的 logistics 计算(SGD)
     model = Logistic_regression(x_train=train_X, y_train=train_y, x_test=test_X, y_test=test_y)
-    model.epochs = 50
+    model.epochs = 500
     model.accTest()
